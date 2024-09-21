@@ -1,0 +1,9 @@
+{
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "hobbies": ["programar", "trotar", "aprender"],
+    "contacto": {
+        "email": "hola@gmail.com",
+        "redes": "hola_mundo"
+    }
+}
