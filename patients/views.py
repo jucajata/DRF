@@ -43,6 +43,9 @@ class ListPatients1View(APIView):
 
 
 class ListPatientsView(ListAPIView, CreateAPIView):
+    """
+    Obtiene la lista de Pacientes.
+    """
     allowed_methods = ["GET", "POST"]
     serializer_class = PatientSerializer
     queryset = Patient.objects.all()
