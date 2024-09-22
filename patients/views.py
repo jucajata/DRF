@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView
 
 # GET /api/patients => Listar
 # POST /api/patients => Crear
@@ -98,3 +98,9 @@ class DetailPatients1View(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
         patient.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+class DetailPatientsView(RetrieveUpdateDestroyAPIView):
+    allowed_methods = ["GET", "PUT", "DELETE"]
+    serializer_class = PatientSerializer
+    queryset = Patient.objects.all()
